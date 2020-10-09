@@ -3,8 +3,8 @@
         <nav class="navbar navbar-expand-sm navbar-dark bg-info">
             <div class="container">
                 <a class="navbar-brand" href=""><b><i class="fas fa-code"></i> Submisi Vue.js</b></a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                    aria-expanded="false" aria-label="Toggle navigation"></button>
+                <button v-if="$store.state.pengguna.idPengguna" class="navbar-toggler text-white d-lg-none" type="button"  @click="ketikaTombolKeluarDiKlik" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-sign-out-alt"></i></button>
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item active" v-if="$store.state.pengguna.idPengguna">
@@ -72,7 +72,7 @@
             <br>
             <app-notifikasi />
             <app-proses />
-            <div class="footer mt-3 pt-2 pb-2 bg-info text-white">
+            <div class="footer_after mt-3 pt-2 pb-2 bg-info text-white">
                 <div class="container text-center">
                     <p> Submission for Vue.js Intermediate PENS 2020 Webinar</p>
                 </div>
@@ -85,7 +85,9 @@
                 />
                 <br>
             </div>
-            <div class="footer mt-3 pt-2 pb-2 bg-info text-white" style="width:100%;position:absolute;bottom:0;">
+            <div class="clearfix"></div>
+            <br>
+            <div class="footer pt-2 pb-2 bg-info text-white">
                 <div class="container text-center">
                     <p> Submission for Vue.js Intermediate PENS 2020 Webinar</p>
                 </div>
