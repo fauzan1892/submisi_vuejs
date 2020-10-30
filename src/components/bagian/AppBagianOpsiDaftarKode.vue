@@ -35,23 +35,23 @@
             :daftar-pilihan-berbentuk-objek="true"
             @input="$emit('update:urutkan', $event)"
         />
-        <br>
-        <div class="row">
-            <div class="col-sm-9"></div>
-            <div class="col-sm-3">
+        <div class="clearfix"></div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-sm-6 ml-auto">
                 <div class="row">
                     <div class="col-6">
                         <app-tombol
                             nama="sebelumnya"
-                            label="Sebelumnya"
+                            label="Prev"
                             :nonaktif="halaman === 1"
                             @klik="ketikaTombolSebelumnyaDiKlik"
                         /> 
                     </div>
-                    <div class="col-6 pl-0">
+                    <div class="col-6">
                         <app-tombol
                             nama="selanjutnya"
-                            label="Selanjutnya"
+                            label="Next"
                             @klik="ketikaTombolSelanjutnyaDiKlik"
                         />
                     </div>

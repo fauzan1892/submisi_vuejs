@@ -1,8 +1,5 @@
 <template>
     <div class="tampilan-kode">
-        <div class="clearfix"></div>
-        <br>
-        <hr>
         <div class="clearfix mt-3"></div>
         <button class="btn btn-danger btn-sm float-right" 
             v-if="idKode"

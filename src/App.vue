@@ -53,25 +53,38 @@
                     </div>
                 </div>
                 <br>
-                <div class="card">
-                    <div class="card-header text-white bg-info">
-                        <h4 class="card-title"><i class="fas fa-file-alt"></i> Kode Saya </h4>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-header text-white bg-info">
+                                <h4 class="card-title"><i class="fas fa-file-alt"></i> Sortir </h4>
+                            </div>
+                            <div class="card-body">
+                                <app-bagian-opsi-daftar-kode
+                                    :halaman.sync="filter.halaman"
+                                    :banyak-data.sync="filter.banyakData"
+                                    :urutkan-berdasarkan.sync="filter.urutkanBerdasarkan"
+                                    :urutkan.sync="filter.urutkan"
+                                    :apakah-highlight-menyala.sync="filter.apakahHighlightMenyala"
+                                />
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <app-bagian-opsi-daftar-kode
-                            :halaman.sync="filter.halaman"
-                            :banyak-data.sync="filter.banyakData"
-                            :urutkan-berdasarkan.sync="filter.urutkanBerdasarkan"
-                            :urutkan.sync="filter.urutkan"
-                            :apakah-highlight-menyala.sync="filter.apakahHighlightMenyala"
-                        />
-                        <div class="clearfix"></div>
-                        <app-bagian-daftar-kode
-                            :apakah-highlight-menyala="filter.apakahHighlightMenyala"
-                            :dapatkan-daftar-kode="dapatkanDaftarKode"
-                        />
+                    <div class="col-sm-8">
+                        <div class="card">
+                            <div class="card-header text-white bg-info">
+                                <h4 class="card-title"><i class="fas fa-file-alt"></i> Kode Saya </h4>
+                            </div>
+                            <div class="card-body">
+                                <app-bagian-daftar-kode
+                                    :apakah-highlight-menyala="filter.apakahHighlightMenyala"
+                                    :dapatkan-daftar-kode="dapatkanDaftarKode"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
             </div>
             <br>
             <app-notifikasi />
