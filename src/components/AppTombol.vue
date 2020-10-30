@@ -1,5 +1,5 @@
 <template>
-    <div :class="`tombol-${nama}`">
+    <div :class="`${nama}`">
         <div  v-if="label === 'Reset'">
             <button class="btn btn-danger"
                 :disabled="nonaktif"

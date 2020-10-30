@@ -1,8 +1,8 @@
 <template>
     <div :class="`opsi-formulir-${nama}`" class="opsi-formulir">
-         <div class="form-group row">
-            <label :for="nama" class="col-sm-4 mt-1">{{ label }} </label>
-            <div class="col-sm-8">
+         <div class="form-group">
+            <label :for="nama">{{ label }} </label>
+            <div>
                     <div
                         v-for="(pilihan, i) in daftarPilihan"
                         :key="i"

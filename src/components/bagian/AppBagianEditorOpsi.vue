@@ -34,34 +34,33 @@
                     @input="$emit('update:highlight', $event)"
                 />
                 <div class="row">
-                    <div class="col-sm-8"></div>
-                    <div class="col-sm-4">
-                        <div class="float-right">
-                            <div class="row">
-                                <div class="col-6">
-                                    <app-tombol
-                                        nama="simpan"
-                                        label="Simpan"
-                                        @klik="ketikaTombolSimpanDiKlik"
-                                    />
-                                </div>
-                                <div class="col-6 pl-2 pr-0">
-                                    <app-tombol
-                                        nama="reset"
-                                        label="Reset"
-                                        @klik="$emit('reset')"
-                                    />
-                                </div>
+                    <div class="col-sm-10 ml-auto">
+                        <div class="row">
+                            <div class="col-4">
+                                <app-tombol
+                                    v-if="hasilHighlight && hasilHighlight.length > 0"
+                                    nama="unduh"
+                                    label="Unduh"
+                                    @klik="ketikaTombolUnduhDiKlik"
+                                />
+                            </div>
+                            <div class="col-4">
+                                <app-tombol
+                                    nama="simpan"
+                                    label="Simpan"
+                                    @klik="ketikaTombolSimpanDiKlik"
+                                />
+                            </div>
+                            <div class="col-4">
+                                <app-tombol
+                                    nama="reset"
+                                    label="Reset"
+                                    @klik="$emit('reset')"
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
-                <app-tombol
-                    v-if="hasilHighlight && hasilHighlight.length > 0"
-                    nama="unduh"
-                    label="Unduh"
-                    @klik="ketikaTombolUnduhDiKlik"
-                />
             </div>
         </div>
     </section>

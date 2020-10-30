@@ -1,8 +1,8 @@
 <template>
     <div :class="`opsi-formulir-${nama}`">
-        <div class="form-group row">
-            <label :for="nama" class="col-sm-4 mt-1">{{ label }} </label>
-            <div class="col-sm-8">
+        <div class="form-group">
+            <label :for="nama">{{ label }} </label>
+            <div>
                 <select
                     :id="nama"
                     class="form-control"

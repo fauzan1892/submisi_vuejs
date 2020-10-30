@@ -17,34 +17,39 @@
         </nav>
         <div class="mt-5" v-if="$store.state.pengguna.idPengguna">
             <div class="container">
-                <div class="card">
-                    <div class="card-header text-white bg-info">
-                        <h4 class="card-title"><i class="fas fa-file-alt"></i> Buat File</h4>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-header text-white bg-info">
+                                <h4 class="card-title"><i class="fas fa-file-alt"></i> Buat File</h4>
+                            </div>
+                            <div class="card-body">
+                                <app-bagian-editor-opsi
+                                    :input-kode="dataKode.inputKode"
+                                    :bahasa-pemrograman-terpilih.sync="dataKode.bahasaPemrogramanTerpilih"
+                                    :twoslash-terpilih.sync="dataKode.twoslashTerpilih"
+                                    :nama-berkas.sync="dataKode.namaBerkas"
+                                    :highlight.sync="dataKode.highlight"
+                                    :hasil-highlight="hasilHighlight"
+                                    @tersimpan="dapatkanDaftarKode"
+                                    @reset="ketikaTombolResetDiKlik"
+                                />
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <app-bagian-editor-opsi
-                            :input-kode="dataKode.inputKode"
-                            :bahasa-pemrograman-terpilih.sync="dataKode.bahasaPemrogramanTerpilih"
-                            :twoslash-terpilih.sync="dataKode.twoslashTerpilih"
-                            :nama-berkas.sync="dataKode.namaBerkas"
-                            :highlight.sync="dataKode.highlight"
-                            :hasil-highlight="hasilHighlight"
-                            @tersimpan="dapatkanDaftarKode"
-                            @reset="ketikaTombolResetDiKlik"
-                        />
-                    </div>
-                </div>
-                <br>
-                <div class="card">
-                    <div class="card-header text-white bg-info">
-                        <h4 class="card-title"><i class="fas fa-code"></i> Buat Kode</h4>
-                    </div>
-                    <div class="card-body">
-                        <app-bagian-editor-kode
-                            :input-kode.sync="dataKode.inputKode"
-                            :hasil-highlight="hasilHighlight"
-                            :bahasa-pemrograman-terpilih="dataKode.bahasaPemrogramanTerpilih"
-                        />
+                    <div class="col-sm-8">
+                        <div class="card">
+                            <div class="card-header text-white bg-info">
+                                <h4 class="card-title"><i class="fas fa-code"></i> Buat Kode</h4>
+                            </div>
+                            <div class="card-body">
+                                <app-bagian-editor-kode
+                                    :input-kode.sync="dataKode.inputKode"
+                                    :hasil-highlight="hasilHighlight"
+                                    :bahasa-pemrograman-terpilih="dataKode.bahasaPemrogramanTerpilih"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -61,7 +66,6 @@
                             :apakah-highlight-menyala.sync="filter.apakahHighlightMenyala"
                         />
                         <div class="clearfix"></div>
-                        <br>
                         <app-bagian-daftar-kode
                             :apakah-highlight-menyala="filter.apakahHighlightMenyala"
                             :dapatkan-daftar-kode="dapatkanDaftarKode"
